@@ -16,7 +16,7 @@
             </div>
         </div>
     </section>
-    <section class="browse-section border border-black px-2.5 sm:px-5 lg:px-10 pt-8 lg:pt-10">
+    <section class="browse-section px-2.5 sm:px-5 lg:px-10 pt-8 lg:pt-10">
         <div class="container mx-auto relative">
             <div class="flex gap-2">
                 <div class="browse-title text-black font-bold text-2xl lg:text-3xl">Find events in</div>
@@ -51,15 +51,23 @@
                     </li>
                 </ul>
             </div>
-            <div class="card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
-                <NuxtLink class="border border-black px-5 py-5 rounded-lg w-full" to="#">
-                    <div class="image bg-light-gray min-h-[90px] rounded-md"></div>
-                    <div class="card-title">Indonesia 4.0 Conference & Expo</div>
-                    <div class="card-time">Sun, Aug 23, 9:00 AM</div>
-                    <div class="card-place">JIEXPO Kemayoran - Central Jakarta, Jakarta</div>
-                    <div class="card-price">Free</div>
-                    <div class="card-organizer">Naganaya in collaboration with Ministry of Industry and WANTRII</div>
-                    <div class="card-follower">75 followers</div>
+            <div class="card flex flex-wrap flex-row gap-9 mt-8">
+                <NuxtLink v-for="card in 8" :key="card" class="shadow-md rounded-lg w-[340px] mb-8" to="#">
+                    <div class="card-image bg-black min-h-[170px] rounded-t-[7px]"></div>
+                    <div class="card-detail px-5 py-5">
+                        <div class="card-title text-black font-bold text-2xl">Indonesia 4.0 Conference & Expo</div>
+                        <div class="card-time text-secondary font-bold text-base">Sun, Aug 23, 9:00 AM</div>
+                        <div class="card-place text-light-gray text-base mt-4">JIEXPO Kemayoran - Central Jakarta, Jakarta
+                        </div>
+                        <div class="card-price text-light-gray text-base">Free</div>
+                        <div class="card-organizer text-black font-medium text-base mt-4">Naganaya in collaboration with
+                            Ministry of Industry
+                            and WANTRII</div>
+                        <div class="card-follower flex gap-2 items-center">
+                            <div class="follower-icon bg-light-gray w-4 h-4 rounded-full"></div>
+                            <div class="follower-status text-light-gray text-base">75 followers</div>
+                        </div>
+                    </div>
                 </NuxtLink>
             </div>
         </div>
