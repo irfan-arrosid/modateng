@@ -51,6 +51,17 @@
                     </li>
                 </ul>
             </div>
+            <div class="card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
+                <NuxtLink class="border border-black px-5 py-5 rounded-lg w-full" to="#">
+                    <div class="image bg-light-gray min-h-[90px] rounded-md"></div>
+                    <div class="card-title">Indonesia 4.0 Conference & Expo</div>
+                    <div class="card-time">Sun, Aug 23, 9:00 AM</div>
+                    <div class="card-place">JIEXPO Kemayoran - Central Jakarta, Jakarta</div>
+                    <div class="card-price">Free</div>
+                    <div class="card-organizer">Naganaya in collaboration with Ministry of Industry and WANTRII</div>
+                    <div class="card-follower">75 followers</div>
+                </NuxtLink>
+            </div>
         </div>
     </section>
 </template>
