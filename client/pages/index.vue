@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="browse-categories mt-6">
-                <ul class="flex gap-14 font-bold">
+                <ul class="flex gap-14 font-bold overflow-auto">
                     <li>
                         <NuxtLink class="text-light-gray hover:text-black active:text-secondary hover:underline" to="#">All
                         </NuxtLink>
@@ -52,8 +52,8 @@
                 </ul>
             </div>
             <div class="card flex flex-wrap flex-row gap-9 mt-4">
-                <NuxtLink v-for="card in 8" :key="card" class="shadow-md rounded-lg w-[340px]" to="#">
-                    <div class="card-image bg-black min-h-[170px] rounded-t-[7px]"></div>
+                <NuxtLink v-for="card in 8" :key="card" class="shadow-lg hover:shadow-2xl w-[340px]" to="#">
+                    <div class="card-image bg-black min-h-[170px]"></div>
                     <div class="card-detail px-5 py-5">
                         <div class="card-title text-black font-bold text-2xl">Indonesia 4.0 Conference & Expo</div>
                         <div class="card-time text-secondary font-bold text-base">Sun, Aug 23, 9:00 AM</div>
@@ -70,14 +70,23 @@
                     </div>
                 </NuxtLink>
             </div>
+            <div class="flex justify-center">
+                <div class="button w-1/2 md:w-1/3 mt-8 text-center">
+                    <NuxtLink
+                        class="border border-black rounded-lg hover:bg-gray px-5 py-3 block w-full text-black font-medium text-sm"
+                        to="#">
+                        See more
+                    </NuxtLink>
+                </div>
+            </div>
         </div>
     </section>
     <section class="upcoming-event px-2.5 sm:px-5 lg:px-10 pt-8 lg:pt-10">
         <div class="container mx-auto relative">
             <div class="upcoming-title text-black font-bold text-2xl lg:text-3xl">Upcoming events</div>
             <div class="card flex flex-wrap flex-row gap-9 mt-4">
-                <NuxtLink v-for="card in 4" :key="card" class="shadow-md rounded-lg w-[340px]" to="#">
-                    <div class="card-image bg-black min-h-[170px] rounded-t-[7px]"></div>
+                <NuxtLink v-for="card in 4" :key="card" class="shadow-md w-[340px]" to="#">
+                    <div class="card-image bg-black min-h-[170px]"></div>
                     <div class="card-detail px-5 py-5">
                         <div class="card-title text-black font-bold text-2xl">Indonesia 4.0 Conference & Expo</div>
                         <div class="card-time text-secondary font-bold text-base">Sun, Aug 23, 9:00 AM</div>
@@ -93,6 +102,15 @@
                         </div>
                     </div>
                 </NuxtLink>
+            </div>
+            <div class="flex justify-center">
+                <div class="button w-1/2 md:w-1/3 mt-8 text-center">
+                    <NuxtLink
+                        class="border border-black rounded-lg hover:bg-gray px-5 py-3 block w-full text-black font-medium text-sm"
+                        to="#">
+                        See more
+                    </NuxtLink>
+                </div>
             </div>
         </div>
     </section>
