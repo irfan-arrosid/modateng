@@ -1,9 +1,5 @@
 <template>
-    <section class="header border border-black px-2.5 sm:px-5 lg:px-10">
-        <div class="container mx-auto relative">
-            <Navbar />
-        </div>
-    </section>
+    <Navbar />
     <section class="hero bg-black px-2.5 sm:px-5 lg:px-10">
         <div class="container mx-auto relative">
             <div class="flex flex-col justify-center h-[375px] sm:h-[300px] lg:h-[575px]">
@@ -85,7 +81,7 @@
         <div class="container mx-auto relative">
             <div class="upcoming-title text-black font-bold text-2xl lg:text-3xl">Upcoming events</div>
             <div class="card flex flex-wrap flex-row gap-9 mt-4">
-                <NuxtLink v-for="card in 4" :key="card" class="shadow-md w-[340px]" to="#">
+                <NuxtLink v-for="card in 4" :key="card" class="shadow-lg hover:shadow-2xl w-[340px]" to="#">
                     <div class="card-image bg-black min-h-[170px]"></div>
                     <div class="card-detail px-5 py-5">
                         <div class="card-title text-black font-bold text-2xl">Indonesia 4.0 Conference & Expo</div>
@@ -114,4 +110,5 @@
             </div>
         </div>
     </section>
+    <Footer />
 </template>
