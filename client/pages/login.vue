@@ -23,7 +23,7 @@
                 <div class="button block mt-8 text-center">
                     <NuxtLink
                         class="bg-secondary hover:bg-secondary-hover rounded-lg px-5 py-3 block w-full text-white font-medium"
-                        to="#">
+                        to="/home">
                         Log in
                     </NuxtLink>
                 </div>
