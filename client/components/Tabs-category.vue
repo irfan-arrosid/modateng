@@ -1,0 +1,25 @@
+<template>
+    <div class="browse-categories mt-6">
+        <ul class="flex gap-14 font-bold overflow-auto">
+            <li>
+                <NuxtLink class="text-light-gray hover:text-black active:text-secondary hover:underline" to="#">All
+                </NuxtLink>
+            </li>
+            <li>
+                <NuxtLink class="text-light-gray hover:text-black hover:underline" to="#">Music</NuxtLink>
+            </li>
+            <li>
+                <NuxtLink class="text-light-gray hover:text-black hover:underline" to="#">Business</NuxtLink>
+            </li>
+            <li>
+                <NuxtLink class="text-light-gray hover:text-black hover:underline" to="#">Hobbies</NuxtLink>
+            </li>
+            <li>
+                <NuxtLink class="text-light-gray hover:text-black hover:underline" to="#">Sport</NuxtLink>
+            </li>
+            <li>
+                <NuxtLink class="text-light-gray hover:text-black hover:underline" to="#">Health</NuxtLink>
+            </li>
+        </ul>
+    </div>
+</template>
