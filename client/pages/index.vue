@@ -1,13 +1,23 @@
 <template>
     <Navbar />
-    <section class="hero bg-black px-2.5 sm:px-5 lg:px-10">
+    <section class="hero bg-neutral px-2.5 sm:px-5 lg:px-10">
         <div class="container mx-auto relative">
             <div class="flex flex-col justify-center h-[375px] sm:h-[300px] lg:h-[575px]">
-                <h1 class="text-white font-bold text-4xl lg:text-5xl">Your Gateway to<br />Eventful Adventures</h1>
-                <div class="button mt-8 flex">
-                    <NuxtLink class="bg-primary hover:bg-primary-hover rounded-lg px-5 py-3 text-white font-medium" to="#">
+                <h1 class="text-base-100 font-bold text-4xl lg:text-5xl">Your Gateway to<br />Eventful Adventures</h1>
+                <!-- <div class="button mt-8 flex">
+                    <NuxtLink class="btn btn-primary normal-case font-medium text-base" to="#">
                         Start Explore
                     </NuxtLink>
+                </div> -->
+                <div class="form-control w-80 mt-8">
+                    <div class="relative">
+                        <input type="text" placeholder="your city" class="input input-bordered w-full pr-16" />
+                        <NuxtLink
+                            class="btn btn-primary absolute top-0 right-0 rounded-l-none normal-case font-medium text-base"
+                            to="#">
+                            Find
+                            now</NuxtLink>
+                    </div>
                 </div>
             </div>
         </div>
@@ -15,7 +25,7 @@
     <section class="browse-section px-2.5 sm:px-5 lg:px-10 pt-8 lg:pt-10">
         <div class="container mx-auto relative">
             <div class="flex gap-2">
-                <div class="browse-title text-black font-bold text-2xl lg:text-3xl">Find events in</div>
+                <div class="browse-title text-neutral font-bold text-2xl lg:text-3xl">Find events in</div>
                 <div class="flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                         class="w-6 h-6 lg:w-7 lg:h-7 stroke-secondary fill-none stroke-[3.5px]">
@@ -25,31 +35,17 @@
                 </div>
             </div>
             <Tabs-category />
-            <Card-event />
+            <div class="flex flex-wrap flex-row gap-9 mt-4">
+                <Card-event v-for="card in 8" :key="card" />
+            </div>
             <Button-see-more />
         </div>
     </section>
     <section class="upcoming-event px-2.5 sm:px-5 lg:px-10 pt-8 lg:pt-10">
         <div class="container mx-auto relative">
-            <div class="upcoming-title text-black font-bold text-2xl lg:text-3xl">Upcoming events</div>
-            <div class="card flex flex-wrap flex-row gap-9 mt-4">
-                <NuxtLink v-for="card in 4" :key="card" class="shadow-lg hover:shadow-2xl w-[340px]" to="#">
-                    <div class="card-image bg-black min-h-[170px]"></div>
-                    <div class="card-detail px-5 py-5">
-                        <div class="card-title text-black font-bold text-2xl">Indonesia 4.0 Conference & Expo</div>
-                        <div class="card-time text-secondary font-bold text-base">Sun, Aug 23, 9:00 AM</div>
-                        <div class="card-place text-light-gray text-base mt-4">JIEXPO Kemayoran - Central Jakarta, Jakarta
-                        </div>
-                        <div class="card-price text-light-gray text-base">Free</div>
-                        <div class="card-organizer text-black font-medium text-base mt-4">Naganaya in collaboration with
-                            Ministry of Industry
-                            and WANTRII</div>
-                        <div class="card-follower flex gap-2 items-center">
-                            <div class="follower-icon bg-light-gray w-4 h-4 rounded-full"></div>
-                            <div class="follower-status text-light-gray text-base">75 followers</div>
-                        </div>
-                    </div>
-                </NuxtLink>
+            <div class="text-neutral font-bold text-2xl lg:text-3xl">Upcoming events</div>
+            <div class="flex flex-wrap flex-row gap-9 mt-4">
+                <Card-event v-for="card in 4" :key="card" />
             </div>
             <Button-see-more />
         </div>
