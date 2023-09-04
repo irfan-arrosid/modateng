@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink class="card rounded-lg w-[350px] bg-base-100 shadow-xl" to="#">
+    <NuxtLink class="card rounded-lg w-full bg-base-100 shadow-xl" to="#">
         <figure class="bg-neutral min-h-[170px]"></figure>
         <div class="px-5 py-5">
             <div class="text-neutral font-bold text-2xl">Indonesia 4.0 Conference & Expo</div>

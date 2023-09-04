@@ -1,6 +1,6 @@
 <template>
-    <div class="browse-categories mt-6">
-        <ul class="flex gap-14 font-bold overflow-auto">
+    <div class="browse-categories mt-4">
+        <ul class="flex gap-8 sm:gap-10 font-bold overflow-x-auto">
             <li>
                 <NuxtLink class="text-light-gray hover:text-black active:text-secondary hover:underline" to="#">All
                 </NuxtLink>

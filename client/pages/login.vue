@@ -6,10 +6,10 @@
                 <NuxtLink class="text-primary font-bold text-2xl" to="/">Modateng</NuxtLink>
                 <div class="text-neutral font-bold text-5xl mt-4">Log in</div>
                 <div class="form-control mt-10">
-                    <input type="text" placeholder="Email" class="input input-bordered w-full text-lg" />
+                    <input type="text" placeholder="Email" class="input input-bordered w-full text-base" />
                 </div>
                 <div class="form-control mt-4">
-                    <input type="password" placeholder="Password" class="input input-bordered w-full text-lg" />
+                    <input type="password" placeholder="Password" class="input input-bordered w-full text-base" />
                 </div>
                 <div class="flex justify-between mt-4 text-base text-light-gray">
                     <div class="flex items-center gap-2">
@@ -19,7 +19,7 @@
                     <NuxtLink to="#" class="underline">Forgot password?</NuxtLink>
                 </div>
                 <div class="mt-6 sm:mt-8 text-center">
-                    <NuxtLink class="btn btn-secondary normal-case font-medium text-lg text-base-100 w-full" to="#">
+                    <NuxtLink class="btn btn-secondary normal-case font-medium text-base text-base-100 w-full" to="#">
                         Log in
                     </NuxtLink>
                 </div>
