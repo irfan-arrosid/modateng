@@ -1,18 +1,28 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div>
       <div class="navbar h-[70px] px-2.5 sm:px-5 lg:px-10">
-        <div class="logo text-primary font-bold text-2xl">Modateng</div>
+        <Link class="logo text-primary font-bold text-2xl" href="/">
+          Modateng
+        </Link>
         <ul class="flex ml-auto items-center gap-2">
           <li>
-            <div class="btn btn-ghost text-black font-medium normal-case text-base">
+            <Link
+              class="btn btn-ghost text-black font-medium normal-case text-base"
+              href="/login"
+            >
               Log In
-            </div>
+            </Link>
           </li>
           <li>
-            <div class="btn btn-secondary text-base-100 font-medium normal-case text-base">
+            <Link
+              class="btn btn-secondary text-base-100 font-medium normal-case text-base"
+              href="/register"
+            >
               Sign Up
-            </div>
+            </Link>
           </li>
         </ul>
       </div>
@@ -31,9 +41,12 @@ export default function Home() {
                   placeholder="Type your city here"
                   class="input input-bordered w-full pr-16"
                 />
-                <div class="btn btn-primary absolute top-0 right-0 rounded-l-none normal-case font-medium text-base">
+                <Link
+                  class="btn btn-primary absolute top-0 right-0 rounded-l-none normal-case font-medium text-base"
+                  href="#"
+                >
                   Find now
-                </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -65,39 +78,57 @@ export default function Home() {
           <div class="browse-categories mt-4">
             <ul class="flex gap-8 sm:gap-10 font-bold overflow-x-auto">
               <li>
-                <div class="text-light-gray hover:text-black active:text-secondary hover:underline">
+                <Link
+                  class="text-light-gray hover:text-black active:text-secondary hover:underline"
+                  href="#"
+                >
                   All
-                </div>
+                </Link>
               </li>
               <li>
-                <div class="text-light-gray hover:text-black hover:underline">
+                <Link
+                  class="text-light-gray hover:text-black hover:underline"
+                  href="#"
+                >
                   Music
-                </div>
+                </Link>
               </li>
               <li>
-                <div class="text-light-gray hover:text-black hover:underline">
+                <Link
+                  class="text-light-gray hover:text-black hover:underline"
+                  href="#"
+                >
                   Business
-                </div>
+                </Link>
               </li>
               <li>
-                <div class="text-light-gray hover:text-black hover:underline">
+                <Link
+                  class="text-light-gray hover:text-black hover:underline"
+                  href="#"
+                >
                   Hobbies
-                </div>
+                </Link>
               </li>
               <li>
-                <div class="text-light-gray hover:text-black hover:underline">
+                <Link
+                  class="text-light-gray hover:text-black hover:underline"
+                  href="#"
+                >
                   Sport
-                </div>
+                </Link>
               </li>
               <li>
-                <div class="text-light-gray hover:text-black hover:underline">
+                <Link
+                  class="text-light-gray hover:text-black hover:underline"
+                  href="#"
+                >
                   Health
-                </div>
+                </Link>
               </li>
             </ul>
           </div>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-4">
-            <div class="card rounded-lg w-full bg-base-100 shadow-xl">
+            <Link class="card rounded-lg w-full bg-base-100 shadow-xl" href="#">
               <figure class="bg-neutral min-h-[170px]"></figure>
               <div class="px-5 py-5">
                 <div class="text-neutral font-bold text-2xl">
@@ -115,13 +146,16 @@ export default function Home() {
                   WANTRII
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
           <div class="flex justify-center">
             <div class="w-2/3 sm:w-1/3 mt-8 text-center">
-              <div class="btn btn-outline w-full normal-case font-medium text-base">
+              <Link
+                class="btn btn-outline w-full normal-case font-medium text-base"
+                href="#"
+              >
                 See more
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -132,7 +166,7 @@ export default function Home() {
             Upcoming events
           </div>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-4">
-            <div class="card rounded-lg w-full bg-base-100 shadow-xl">
+            <Link class="card rounded-lg w-full bg-base-100 shadow-xl" href="#">
               <figure class="bg-neutral min-h-[170px]"></figure>
               <div class="px-5 py-5">
                 <div class="text-neutral font-bold text-2xl">
@@ -150,13 +184,16 @@ export default function Home() {
                   WANTRII
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
           <div class="flex justify-center">
             <div class="w-2/3 sm:w-1/3 mt-8 text-center">
-              <div class="btn btn-outline w-full normal-case font-medium text-base">
+              <Link
+                class="btn btn-outline w-full normal-case font-medium text-base"
+                href="#"
+              >
                 See more
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -167,10 +204,10 @@ export default function Home() {
         </aside>
         <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
           <ul class="grid grid-cols-2 sm:flex gap-6 font-extralight">
-            <div>Terms of Service</div>
-            <div>Privacy Policy</div>
-            <div>Cookie Policy</div>
-            <div>Help</div>
+            <Link href="#">Terms of Service</Link>
+            <Link href="#">Privacy Policy</Link>
+            <Link href="#">Cookie Policy</Link>
+            <Link href="#">Help</Link>
           </ul>
         </nav>
       </footer>
