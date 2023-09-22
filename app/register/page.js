@@ -1,6 +1,35 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
 export default function Page() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const router = useRouter();
+
+  const handleRegister = async () => {
+    try {
+      const res = await axios.post("api/users", {
+        name: name,
+        email: email,
+        password: password,
+      });
+
+      // if (!res.ok) {
+      //   throw new Error("Register failed");
+      // }
+
+      router.push("/login");
+    } catch (error) {
+      console.error("Register error:", error);
+    }
+  };
+
   return (
     <div>
       <div className="h-screen flex justify-center">
@@ -18,6 +47,8 @@ export default function Page() {
                 type="text"
                 placeholder="Name"
                 className="input input-bordered w-full text-base"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="form-control mt-4">
@@ -25,6 +56,8 @@ export default function Page() {
                 type="text"
                 placeholder="Email"
                 className="input input-bordered w-full text-base"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="form-control mt-4">
@@ -32,6 +65,8 @@ export default function Page() {
                 type="password"
                 placeholder="Password"
                 className="input input-bordered w-full text-base"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="form-control mt-4">
@@ -42,12 +77,13 @@ export default function Page() {
               />
             </div>
             <div className="mt-6 sm:mt-8 text-center">
-              <Link
+              <button
                 className="btn btn-secondary normal-case font-medium text-base text-base-100 w-full"
-                href="#"
+                type="submit"
+                onClick={handleRegister}
               >
                 Create account
-              </Link>
+              </button>
             </div>
             <div className="text-center mt-3">
               <div className="text-neutral text-base">
