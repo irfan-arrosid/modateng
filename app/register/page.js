@@ -9,20 +9,18 @@ export default function Page() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const router = useRouter();
 
   const handleRegister = async () => {
     try {
-      const res = await axios.post("api/users", {
+      await axios.post("api/users", {
         name: name,
         email: email,
         password: password,
+        confirmPassword: confirmPassword,
       });
-
-      // if (!res.ok) {
-      //   throw new Error("Register failed");
-      // }
 
       router.push("/login");
     } catch (error) {
@@ -74,6 +72,8 @@ export default function Page() {
                 type="password"
                 placeholder="Confirm password"
                 className="input input-bordered w-full text-base"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
             <div className="mt-6 sm:mt-8 text-center">
