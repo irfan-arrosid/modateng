@@ -1,8 +1,6 @@
-import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/db";
 
 export async function GET() {
   try {
@@ -31,14 +29,46 @@ export async function POST(req) {
     // Ask to json request
     const body = await req.json();
 
+    // Check if form input is empty
+    const validateField = (field, fieldName) => {
+      if (!field) {
+        return NextResponse.json(
+          { message: `${fieldName} cannot be empty` },
+          { status: 400 }
+        );
+      }
+    };
+
+    const emptyField =
+      validateField(body.name, "Name") ||
+      validateField(body.email, "Email") ||
+      validateField(body.password, "Password");
+
+    if (emptyField) {
+      return emptyField;
+    }
+
     // Hashing password
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(body.password, salt);
 
-    // Match checking between password and confirm password input
+    // Check if email is already exist
+    const isEmailExist = await prisma.user.findFirst({
+      where: {
+        email: body.email,
+      },
+    });
+    if (isEmailExist) {
+      return NextResponse.json(
+        { message: "Email is already exist" },
+        { status: 409 }
+      );
+    }
+
+    // Check if password and confirmPassword is match
     if (body.password !== body.confirmPassword) {
       return NextResponse.json(
-        { message: "Password mismatch" },
+        { message: "Password doesn't match" },
         { status: 400 }
       );
     }
