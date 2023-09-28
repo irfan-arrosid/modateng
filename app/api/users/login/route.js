@@ -29,11 +29,14 @@ export async function POST(req) {
       );
     }
 
+    // Exclude displays password
+    const { password: userPassword, ...rest } = user;
+
     // Sending success response
     return NextResponse.json(
       {
         message: "Login is success",
-        data: user,
+        data: rest,
       },
       { status: 202 }
     );

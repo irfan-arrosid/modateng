@@ -82,11 +82,14 @@ export async function POST(req) {
       },
     });
 
+    // Exclude displays password
+    const { password: userPassword, ...rest } = user;
+
     // Sending success response
     return NextResponse.json(
       {
         message: "Register new user is success",
-        data: user,
+        data: rest,
       },
       { status: 201 }
     );
