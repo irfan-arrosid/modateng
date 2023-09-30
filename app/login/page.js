@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import axios from "axios";
+import { signIn } from "next-auth/react";
 
 export default function Page() {
   const [email, setEmail] = useState("");
@@ -12,15 +12,16 @@ export default function Page() {
   const router = useRouter();
 
   const handleLogin = async () => {
-    try {
-      await axios.post("api/users/login", {
-        email: email,
-        password: password,
-      });
+    const signInData = await signIn("credentials", {
+      email: email,
+      password: password,
+      redirect: false,
+    });
 
+    if (signInData?.error) {
+      console.log("Login error: ", signInData?.error);
+    } else {
       router.push("/home");
-    } catch (error) {
-      console.error("Login error:", error);
     }
   };
 
