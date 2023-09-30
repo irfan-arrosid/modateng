@@ -1,6 +1,7 @@
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
+import ButtonLogOut from "./ButtonLogOut";
 
 export default async function Navbar() {
   const session = await getServerSession(authOptions);
@@ -11,16 +12,7 @@ export default async function Navbar() {
         Modateng
       </Link>
       {session?.user ? (
-        <ul className="flex ml-auto items-center gap-2">
-          <li>
-            <Link
-              className="btn btn-secondary text-base-100 font-medium normal-case text-base"
-              href="/logout"
-            >
-              Log Out
-            </Link>
-          </li>
-        </ul>
+        <ButtonLogOut />
       ) : (
         <ul className="flex ml-auto items-center gap-2">
           <li>
