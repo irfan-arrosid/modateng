@@ -1,31 +1,14 @@
+import ButtonSeeMore from "@/components/ButtonSeeMore";
+import CardEvent from "@/components/CardEvent";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import TabsCategory from "@/components/TabsCategory";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
   return (
     <div>
-      <div className="navbar h-[70px] px-2.5 sm:px-5 lg:px-10">
-        <Link className="logo text-primary font-bold text-2xl" href="/">
-          Modateng
-        </Link>
-        <ul className="flex ml-auto items-center gap-2">
-          <li>
-            <Link
-              className="btn btn-ghost text-black font-medium normal-case text-base"
-              href="/login"
-            >
-              Log In
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="btn btn-secondary text-base-100 font-medium normal-case text-base"
-              href="/register"
-            >
-              Sign Up
-            </Link>
-          </li>
-        </ul>
-      </div>
+      <Navbar />
       <section className="hero bg-neutral px-2.5 sm:px-5 lg:px-10">
         <div className="container mx-auto relative">
           <div className="flex flex-col justify-center h-[375px] sm:h-[300px] lg:h-[575px]">
@@ -75,92 +58,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="browse-categories mt-4">
-            <ul className="flex gap-8 sm:gap-10 font-bold overflow-x-auto">
-              <li>
-                <Link
-                  className="text-light-gray hover:text-black active:text-secondary hover:underline"
-                  href="#"
-                >
-                  All
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-light-gray hover:text-black hover:underline"
-                  href="#"
-                >
-                  Music
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-light-gray hover:text-black hover:underline"
-                  href="#"
-                >
-                  Business
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-light-gray hover:text-black hover:underline"
-                  href="#"
-                >
-                  Hobbies
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-light-gray hover:text-black hover:underline"
-                  href="#"
-                >
-                  Sport
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-light-gray hover:text-black hover:underline"
-                  href="#"
-                >
-                  Health
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <TabsCategory />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-4">
-            <Link
-              className="card rounded-lg w-full bg-base-100 shadow-xl"
-              href="#"
-            >
-              <figure className="bg-neutral min-h-[170px]"></figure>
-              <div className="px-5 py-5">
-                <div className="text-neutral font-bold text-2xl">
-                  Indonesia 4.0 Conference & Expo
-                </div>
-                <div className="text-secondary font-bold text-base">
-                  Sun, Aug 23, 9:00 AM
-                </div>
-                <div className="text-light-gray text-base mt-4">
-                  JIEXPO Kemayoran - Central Jakarta, Jakarta
-                </div>
-                <div className="text-light-gray text-base">Free</div>
-                <div className="text-neutral font-medium text-base mt-4">
-                  Naganaya in collaboration with Ministry of Industry and
-                  WANTRII
-                </div>
-              </div>
-            </Link>
+            <CardEvent />
           </div>
-          <div className="flex justify-center">
-            <div className="w-2/3 sm:w-1/3 mt-8 text-center">
-              <Link
-                className="btn btn-outline w-full normal-case font-medium text-base"
-                href="#"
-              >
-                See more
-              </Link>
-            </div>
-          </div>
+          <ButtonSeeMore />
         </div>
       </section>
       <section className="upcoming-event px-2.5 sm:px-5 lg:px-10 mt-8 lg:pt-10">
@@ -169,54 +71,12 @@ export default function Home() {
             Upcoming events
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-4">
-            <Link
-              className="card rounded-lg w-full bg-base-100 shadow-xl"
-              href="#"
-            >
-              <figure className="bg-neutral min-h-[170px]"></figure>
-              <div className="px-5 py-5">
-                <div className="text-neutral font-bold text-2xl">
-                  Indonesia 4.0 Conference & Expo
-                </div>
-                <div className="text-secondary font-bold text-base">
-                  Sun, Aug 23, 9:00 AM
-                </div>
-                <div className="text-light-gray text-base mt-4">
-                  JIEXPO Kemayoran - Central Jakarta, Jakarta
-                </div>
-                <div className="text-light-gray text-base">Free</div>
-                <div className="text-neutral font-medium text-base mt-4">
-                  Naganaya in collaboration with Ministry of Industry and
-                  WANTRII
-                </div>
-              </div>
-            </Link>
+            <CardEvent />
           </div>
-          <div className="flex justify-center">
-            <div className="w-2/3 sm:w-1/3 mt-8 text-center">
-              <Link
-                className="btn btn-outline w-full normal-case font-medium text-base"
-                href="#"
-              >
-                See more
-              </Link>
-            </div>
-          </div>
+          <ButtonSeeMore />
         </div>
       </section>
-      <footer className="footer items-center p-4 bg-neutral text-base text-base-100 mt-8 px-2.5 sm:px-5 lg:px-10">
-        <aside className="items-center grid-flow-col">
-          <div>© 2023 Modateng</div>
-        </aside>
-        <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-          <ul className="grid grid-cols-2 sm:flex gap-6 font-extralight">
-            <Link href="#">Terms of Service</Link>
-            <Link href="#">Privacy Policy</Link>
-            <Link href="#">Cookie Policy</Link>
-            <Link href="#">Help</Link>
-          </ul>
-        </nav>
-      </footer>
+      <Footer />
     </div>
   );
 }
