@@ -21,7 +21,8 @@ export default function Page() {
     if (signInData?.error) {
       console.log("Login error: ", signInData?.error);
     } else {
-      router.push("/");
+      router.refresh();
+      router.push("/home");
     }
   };
 

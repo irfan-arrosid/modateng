@@ -48,8 +48,8 @@ export default async function Home() {
                 className="w-6 h-6 lg:w-7 lg:h-7 stroke-secondary fill-none stroke-[3.5px]"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                 />
               </svg>
